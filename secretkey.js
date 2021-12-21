@@ -1,0 +1,10 @@
+const crypto = require('crypto');
+const algorithm = `aes-192-cbc`;
+const pass_key = `grace_mark`;
+const salt = 'salt';
+const keylen = 24;
+const shared_key = crypto.scryptSync(pass_key, salt, keylen);
+const one_time_code = crypto.randomBytes(16);
+const cipher = crypto.createCipheriv(algorithm, shared_key, one_time_code);
+let cipher_text;
+const decipher = crypto.createDecipheriv(algorithm, shared_key, one_time_code);
