@@ -1,0 +1,19 @@
+{
+  "name": "secret-key",
+  "version": "1.0.0",
+  "description": "",
+  "main": "secretkey.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jebitok-dev/secret-key-generate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jebitok-dev/secret-key-generate/issues"
+  },
+  "homepage": "https://github.com/jebitok-dev/secret-key-generate#readme"
+}

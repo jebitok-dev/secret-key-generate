@@ -9,18 +9,6 @@ const cipher = crypto.createCipheriv(algorithm, shared_key, one_time_code);
 let cipher_text;
 const decipher = crypto.createDecipheriv(algorithm, shared_key, one_time_code);
 
-function Decrypting() {
-    decipher.on('readable', () => {
-        let _plain_text = decipher.read();
-        if(_plain_text) {
-            console.log(_plain_text.toString('utf8'))
-        };
-    });
-
-    decipher.write(cipher_text, 'hex');
-    decipher.end();
-}
-
 function Encrypting() {
     const marks_message = "How are you doing?";
     cipher.on('readable', () => {
@@ -33,3 +21,18 @@ function Encrypting() {
     cipher.write(marks_message);
     cipher.end();
 }
+
+function Decrypting() {
+    decipher.on('readable', () => {
+        let _plain_text = decipher.read();
+        if(_plain_text) {
+            console.log(_plain_text.toString('utf8'))
+        };
+    });
+
+    decipher.write(cipher_text, 'hex');
+    decipher.end();
+}
+
+Encrypting();
+Decrypting();
